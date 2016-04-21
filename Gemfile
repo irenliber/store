@@ -50,3 +50,5 @@ gem 'rails_admin'
 gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.3.6'
+
+gem "haml-rails", "~> 0.9"

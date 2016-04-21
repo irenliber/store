@@ -48,3 +48,5 @@ end
 gem 'rails_admin'
 
 gem 'devise'
+
+gem 'bootstrap-sass', '~> 3.3.6'

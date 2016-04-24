@@ -1,4 +1,18 @@
-- @products.each do |product|
-  %h2= product.title
-  %h3= product.price
-
+%table.table.table-striped
+  %thead
+    %tr
+      %th #
+      %th Наименование
+      %th Производитель
+      %th Цена
+      %th Покупка
+  %tbody
+    - @products.each_with_index do |product, index|
+      %tr
+        %th{:scope => "row"}= index.next
+        %td= product.title
+        %td= product.production
+        %td= product.price
+        %td
+          .btn.btn-primary-store
+            Купить

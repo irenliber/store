@@ -18,14 +18,10 @@
         %a.navbar-brand{:href => "#"} Автопульс72
       #navbar.navbar-collapse.collapse{"aria-expanded" => "false", :style => "height: 0.8px;"}
         %ul.nav.navbar-nav
-          %li.active
-            %a{:href => "#"} Товары
-          %li
-            %a{:href => "#"} Доставка
-          %li
-            %a{:href => "#about"} О нас
-          %li
-            %a{:href => "#contact"} Контакты
+          - Page.all.each do |product|
+            %li.active
+              %a{:href => "#"}= product.title
+
 
   .container
     .padding

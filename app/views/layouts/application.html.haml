@@ -18,9 +18,11 @@
         %a.navbar-brand{:href => "#"} Автопульс72
       #navbar.navbar-collapse.collapse{"aria-expanded" => "false", :style => "height: 0.8px;"}
         %ul.nav.navbar-nav
+          %li{class: nav_active?}
+            = link_to 'Товары', root_path
           - Page.all.each do |product|
-            %li.active
-              %a{:href => "#"}= product.title
+            %li{class: pages_nav_active?(product.id)}
+              = link_to product.title, page_path(product.id)
 
 
   .container

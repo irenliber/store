@@ -1,0 +1,34 @@
+.row
+  .col-xs-12
+    = form_tag(root_path, method: :get, class: 'form-inline form-search-products') do
+      .form-group
+        = text_field_tag :search, params[:search], placeholder: 'Поиск', class: 'form-control'
+      = submit_tag 'Поиск', name: nil, class: 'btn btn-primary'
+
+
+.row
+  .col-xs-12
+    - if @products.try(:last).present?
+
+      %table.table.table-striped
+        %thead
+          %tr
+            %th #
+            %th Наименование
+            %th Производитель
+            %th Цена
+            %th Покупка
+        %tbody
+          - @products.each_with_index do |product, index|
+            %tr
+              %th{:scope => "row"}= index.next
+              %td= product.dig(:name)
+              %td= product.dig(:brand)
+              %td= product_price_rossko(product)
+              %td
+                .btn.btn-primary-store
+                  Купить
+
+    - else
+      .not-found
+        %p По вашему запросу ничего не найдено.

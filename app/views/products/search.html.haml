@@ -28,7 +28,7 @@
               %td= product.dig(:brand)
               %td= product_price_rossko(product)
               %td
-                = button_to 'Купить', products_render_order_modal_path(guid: product.dig(:guid), name: product.dig(:name)), remote: true, class: 'btn btn-primary'
+                = button_to 'Купить', products_render_order_modal_path(price: product_price_rossko(product), guid: product.dig(:guid), name: product.dig(:name)), remote: true, class: 'btn btn-primary'
 
     - else
       .not-found

@@ -11,4 +11,5 @@
             = text_field_tag :phone, '', placeholder: 'Введите номер телефона', class: 'form-control'
             = hidden_field_tag :product_code, params[:guid]
             = hidden_field_tag :product_title, params[:name]
+            = hidden_field_tag :price, params[:price]
           = submit_tag 'Заказать', name: nil, class: 'btn btn-primary'

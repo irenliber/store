@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
   end
 
   def new_order
-    @order = Order.create(phone: params[:phone], product_title: params[:product_title], product_code: params[:product_code])
+    @order = Order.create(phone: params[:phone], product_title: params[:product_title], product_code: params[:product_code], price: params[:price])
   end
 
   def render_order_modal

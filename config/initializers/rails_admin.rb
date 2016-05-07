@@ -54,6 +54,7 @@ RailsAdmin.config do |config|
       field :name
       field :product_title
       field :product_code
+      field :price
       field :created_at
     end
     edit do

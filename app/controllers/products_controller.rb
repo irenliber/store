@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @start_page = Page.find_by_start(true)
 
   end
 

@@ -5,5 +5,6 @@
         = text_field_tag :search, params[:search], placeholder: 'Поиск', class: 'form-control'
       = submit_tag 'Поиск', name: nil, class: 'btn btn-primary'
 
-.not-found
-  %p Введите ваш запрос в форму поиска.
+.row
+  .col-xs-12
+    = @start_page.try(:description).try(:html_safe)

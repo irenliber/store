@@ -68,12 +68,17 @@ RailsAdmin.config do |config|
 
   config.model 'Page' do
     list do
+      field :active
       field :title
-      field :description
+      field :position
+      field :start
     end
     edit do
+      field :active
       field :title
       field :description, :ck_editor
+      field :position
+      field :start
     end
   end
 

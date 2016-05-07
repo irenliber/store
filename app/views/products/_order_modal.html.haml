@@ -1,4 +1,4 @@
-.modal.fade{"aria-labelledby" => "mySmallModalLabel", :role => "dialog", :style => "display: none;", :tabindex => "-1", id: "Order#{product[:guid]}"}
+.modal.fade{"aria-labelledby" => "mySmallModalLabel", :role => "dialog", :style => "display: none;", :tabindex => "-1", id: "NewOrder"}
   .modal-dialog.modal-sm
     .modal-content
       .modal-header
@@ -9,6 +9,6 @@
         = form_tag(products_new_order_path, method: :post, remote: true, class: 'form-search-products') do
           .form-group
             = text_field_tag :phone, '', placeholder: 'Введите номер телефона', class: 'form-control'
-            = hidden_field_tag :product_code, product[:guid]
-            = hidden_field_tag :product_title, product[:name]
+            = hidden_field_tag :product_code, params[:guid]
+            = hidden_field_tag :product_title, params[:name]
           = submit_tag 'Заказать', name: nil, class: 'btn btn-primary'

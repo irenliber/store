@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'products#search'
   post 'products/new_order'
+  post 'products/render_order_modal'
 
   resources :pages, only: 'show'
 

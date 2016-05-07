@@ -15,6 +15,7 @@
           %tr
             %th #
             %th Наименование
+            %th Код производителя
             %th Производитель
             %th Цена
             %th Покупка
@@ -23,6 +24,7 @@
             %tr
               %th{:scope => "row"}= index.next
               %td= product.dig(:name)
+              %td= product.dig(:part_number)
               %td= product.dig(:brand)
               %td= product_price_rossko(product)
               %td

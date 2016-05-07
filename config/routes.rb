@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'products#search'
+  post 'products/new_order'
 
   resources :pages, only: 'show'
 

@@ -73,7 +73,7 @@ RailsAdmin.config do |config|
     end
     edit do
       field :title
-      field :description
+      field :description, :ck_editor
     end
   end
 

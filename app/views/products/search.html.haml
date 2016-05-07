@@ -28,8 +28,9 @@
               %td= product.dig(:brand)
               %td= product_price_rossko(product)
               %td
-                .btn.btn-primary-store
+                %button.btn.btn-primary{"data-target" => "#Order#{product[:guid]}", "data-toggle" => "modal", :type => "button"}
                   Купить
+              = render 'products/order_modal', product: product
 
     - else
       .not-found

@@ -1,0 +1,12 @@
+.modal.fade{"aria-labelledby" => "mySmallModalLabel", :role => "dialog", :style => "display: none;", :tabindex => "-1", id: "Order#{product[:guid]}"}
+  .modal-dialog.modal-sm
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+        %h4#mySmallModalLabel.modal-title Оформление покупки
+      .modal-body
+        = form_tag(root_path, method: :get, class: 'form-search-products') do
+          .form-group
+            = text_field_tag :search, '', placeholder: 'Введите номер телефона', class: 'form-control'
+          = submit_tag 'Заказать', name: nil, class: 'btn btn-primary'

@@ -34,4 +34,47 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'Product' do
+    visible false
+  end
+
+  config.model 'Delivery' do
+    visible false
+  end
+
+  config.model 'User' do
+    visible false
+  end
+
+  config.model 'Order' do
+    list do
+      field :done
+      field :phone
+      field :name
+      field :product_title
+      field :product_code
+      field :created_at
+    end
+    edit do
+      field :done
+      field :phone
+      field :name
+      field :product_title
+      field :product_code
+      field :created_at
+    end
+  end
+
+  config.model 'Page' do
+    list do
+      field :title
+      field :description
+    end
+    edit do
+      field :title
+      field :description
+    end
+  end
+
 end

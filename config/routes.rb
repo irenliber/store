@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'products#index'
-  post 'products/search'
+  get 'products/search'
   post 'products/new_order'
   post 'products/render_order_modal'
 

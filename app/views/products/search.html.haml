@@ -1,6 +1,6 @@
 .row
   .col-xs-12
-    = form_tag(products_search_path, method: :post, class: 'form-inline form-search-products') do
+    = form_tag(products_search_path, method: :get, class: 'form-inline form-search-products') do
       .form-group
         = text_field_tag :search, params[:search], placeholder: 'Поиск', class: 'form-control'
       = submit_tag 'Поиск', name: nil, class: 'btn btn-primary'
@@ -28,7 +28,7 @@
               %td= product.dig(:brand)
               %td= product_price_rossko(product)
               %td
-                = button_to 'Купить', products_render_order_modal_path, remote: true, class: 'btn btn-primary'
+                = button_to 'Купить', products_render_order_modal_path(guid: product.dig(:guid), name: product.dig(:name)), remote: true, class: 'btn btn-primary'
 
     - else
       .not-found

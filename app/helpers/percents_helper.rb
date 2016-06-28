@@ -1,0 +1,2 @@
+module PercentsHelper
+end

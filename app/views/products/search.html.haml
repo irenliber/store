@@ -26,7 +26,7 @@
               %td= product.dig(:name)
               %td= product.dig(:part_number)
               %td= product.dig(:brand)
-              %td= product_price_rossko(product)
+              %td= product_price_rossko(product).to_i*Percent.first.value.to_i
               %td
                 = button_to 'Купить', products_render_order_modal_path(price: product_price_rossko(product), guid: product.dig(:guid), name: product.dig(:name)), remote: true, class: 'btn btn-primary'
 

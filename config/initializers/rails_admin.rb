@@ -83,4 +83,14 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model 'Percent' do
+    list do
+      field :value
+    end
+    edit do
+      field :value
+    end
+  end
+
+
 end

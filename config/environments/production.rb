@@ -76,4 +76,16 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+      :address => "smtp.yandex.ru",
+      :port => 25,
+      :authentication => :login,
+      :domain => "avtopuls72.ru",
+      :user_name => "avtopuls72@yandex.ru",
+      :password => "virineya",
+  }
+  config.action_mailer.default_url_options = { :host => "avtopuls72.ru" }
 end

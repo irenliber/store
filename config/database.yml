@@ -21,5 +21,12 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: autopulse72_production
+  username: autopulse72_production
+  password: OnJd10Hd
+  host: localhost
+  port: 5432
+  pool: 1
+  timeout: 5000

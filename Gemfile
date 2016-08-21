@@ -10,7 +10,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 gem 'pg'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -44,6 +44,14 @@ group :development do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem 'capistrano', '~> 3.1'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails-tail-log'
+  gem 'capistrano-rails-console'
 end
 
 gem 'rails_admin'
